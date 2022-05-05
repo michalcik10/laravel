@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PersonController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+
+
+Route::get('/postMore',[PersonController::class,'postNames']);
+Route::post('/post',[PersonController::class,'post']);
+Route::delete('/deleteAll',[PersonController::class,'deleteAll']);
+Route::delete('/delete/{id}',[PersonController::class,'delete']);
+Route::put('/update/{id}',[PersonController::class,'update']);
+Route::get("/user",);
